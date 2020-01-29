@@ -13,6 +13,18 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @group = Group.fint (params[:id])
+  end
+
+  def update
+    @group = Group.find (params[:id])
+    if @group.update(group_params)
+      redirect_to root_path, notice: "グループが変更されました！"
+    end
+      render :edit
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
