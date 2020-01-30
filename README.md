@@ -65,7 +65,7 @@ Things you may want to cover:
 |user_id|string|null: fasten, foreign_key: true|
 |group_id|string|null: faste|
 |text|text||
-|photo|string||
+|image|string||
 
 ### Association
 - belongs_to :group
