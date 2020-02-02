@@ -6,7 +6,7 @@
 }
 .main {
   width: calc(100vw - 300px);
-  &__header {
+  .header {
     border-bottom: solid 1px #eee;
     height: 100px;
     width: 100%;
@@ -42,15 +42,15 @@
     }
   }
 
-  &__messages {
+  .messages {
     background-color: #fafafa;
     height: 30px;
     width: 100%;
     height: calc(100vh - 190px);
     padding: 46px 40px;
-    &__message {
+    .message {
       padding-bottom: 40px;
-      &__upper-info {
+      .upper-info {
         display: flex;
         margin-bottom: 10px;
         &__talker {
@@ -63,13 +63,13 @@
           margin-left: 10px;
         }
       }
-      &__text {
+      .text {
         margin-bottom: 10px;
       }
     }
   }
 
-  &__form {
+  .form {
     height: 90px;
     background-color: #dddddd;
     padding: 20px 40px;
