@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :group_params, only: [:edit, :update]
 
   def new
     @group = Group.new
@@ -6,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new (group_params)
+    @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, notice: "グループが作成されたよ！"
     else
@@ -15,20 +16,24 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.fint (params[:id])
   end
 
   def update
-    @group = Group.find (params[:id])
     if @group.update(group_params)
-      redirect_to root_path, notice: "グループが変更されました！"
-    end
+      redirect_to group_messages_path(@group), notice: "グループが変更されました！"
+    else
       render :edit
+    end
   end
 
   private
+  
   def group_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def group_params
+    @group = Group.find(params[:id])
   end
 
 end

@@ -27,8 +27,4 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
-  # def set_users
-  #   @user = User.find(params[user_id])
-  # end
-
 end

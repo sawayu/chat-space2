@@ -9,12 +9,7 @@
         .header__left-box__list
           - @group.users.each do |u|
             = u.name
-          -# = current_user.name
-    .header__edit-btn
-      -# %a{:href => "/groups/:id/edit"}
-      -#   Edit
-      = link_to "Edit", edit_group_path method: :edit
-
+    = link_to "Edit",edit_group_path(@group),class: "header__edit-btn"
 
   .messages
     -# =  render @messages
