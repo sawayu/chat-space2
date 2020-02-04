@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :group_params, only: [:edit, :update]
+  before_action :g_params, only: [:edit, :update]
 
   def new
     @group = Group.new
@@ -27,12 +27,12 @@ class GroupsController < ApplicationController
   end
 
   private
-  
+
   def group_params
     params.require(:group).permit(:name, user_ids: [])
   end
 
-  def group_params
+  def g_params
     @group = Group.find(params[:id])
   end
 
