@@ -39,6 +39,7 @@
       height: 40px;
       line-height: 40px;
       box-shadow: 1px 1px;
+      text-decoration: none;
     }
   }
 
@@ -74,42 +75,57 @@
     background-color: #dddddd;
     padding: 20px 40px;
     &__new-message {
-      width: 100%;
-      justify-content: space-between;
       display: flex;
       &__input-box {
-        width: 100%;
-        display: flex;
         position: relative;
-        &__text {
+        width: 100%;
+        .text {
           width: 100%;
           height: 50px;
           background-color: white;
           padding: 0 40px 0 10px;
           font-size: 11px;
-          color: #999999;
-          display: flex;
           align-items: center;
+          border-style: none;
           box-shadow: 1px 1px 2px #999999;
         }
-        &__image {
-          top: 10px;
-          right: 10px;
+        .image {
           position: absolute;
-          font-size: 1.4rem;
+          align-items: center;
+          right: 15px;
+          bottom: 14px;
+          display: flex;
+          .icon {
+            top: 10px;
+            right: 10px;
+            font-size: 1.4rem;
+          }
+          .hidden {
+            display: none;
+          }
         }
       }
-      &__submit-btn {
-        display: flex;
+      .btn {
         align-items: center;
         height: 50px;
         width: 100px;
         margin-left: 15px;
-        padding: 0 30px 0;
+        padding: 0 20px 0;
         background-color: #38aef0;
         color: white;
         box-shadow: 1px 1px 2px #999999;
+        border-style: none;
+        display: flex;
+      }
+      .fas.fa-paper-plane {
+        color: white;
+        font-size: 17px;
+      }
+      .letter {
+        font-size: 16px;
+        margin-left: 5px;
       }
     }
   }
 }
+

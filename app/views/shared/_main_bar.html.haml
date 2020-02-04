@@ -9,7 +9,7 @@
         .header__left-box__list
           - @group.users.each do |u|
             = u.name
-    = link_to "Edit",edit_group_path(@group),class: "header__edit-btn"
+    = link_to "グループ編集",edit_group_path(@group),class: "header__edit-btn"
 
   .messages
     -# =  render @messages
@@ -27,29 +27,13 @@
 
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__new-message', placeholder: 'type a message'
-      .form__new-input-box
-        = f.label :image, class: 'form__new-input-box__text' do
-          = icon('fas', 'image', class: 'form__new-input-box__image')
-          = f.file_field :image, class: 'hidden'
-      = f.submit '送る', class: 'form__new-submit-btn'
-
-    -#     .form
-    -# = form_for [@group, @message] do |f|
-    -# .form__new-message
-    -#   .form__new-input-box
-    -#     .form__new-input-box__text
-    -#       入力してね!!
-    -#     .form__new-input-box__image
-    -#       %i.far.fa-image
-    -#   .form__new-submit-btn
-    -#     送る
-
-      -#       .form
-      -# = form_for [@group, @message] do |f|
-      -#   = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      -#   .form__mask
-      -#     = f.label :image, class: 'form__mask__image' do
-      -#       = icon('fas', 'image', class: 'icon')
-      -#       = f.file_field :image, class: 'hidden'
-      -#   = f.submit 'Send', class: 'form__submit'
+      .form__new-message
+        .form__new-message__input-box
+          = f.text_field :content, class: 'text', placeholder: 'メッセージを入力できます！'
+          = f.label :image, class: 'image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        %button{type: "submit", class:'btn'}
+          %i.fas.fa-paper-plane
+          .letter
+            送信
